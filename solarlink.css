@@ -1372,3 +1372,508 @@ body::before {
     font-size: clamp(1.8rem, 10vw, 3rem);
   }
 }
+
+/* ========================= MOBILE PRESENTATION PASS ========================= */
+
+@media (max-width: 760px) {
+  body {
+    background:
+      radial-gradient(circle at 20% 8%, rgba(255, 200, 74, 0.22), transparent 14rem),
+      radial-gradient(circle at 92% 18%, rgba(24, 184, 148, 0.18), transparent 15rem),
+      linear-gradient(180deg, #fff9ea 0%, #eef8ee 42%, #103f36 100%);
+  }
+
+  .site-nav {
+    left: 10px;
+    right: 10px;
+    top: 10px;
+    width: auto;
+    min-height: auto;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 9px;
+    padding: 10px;
+    border-radius: 18px;
+    transform: none;
+  }
+
+  .brand {
+    gap: 9px;
+    min-width: 0;
+  }
+
+  .brand-mark {
+    width: 38px;
+    height: 38px;
+    flex: 0 0 38px;
+  }
+
+  .brand strong {
+    font-size: 1rem;
+    letter-spacing: 0.08em;
+  }
+
+  .brand small {
+    font-size: 0.5rem;
+    letter-spacing: 0.11em;
+  }
+
+  .site-nav nav {
+    display: flex;
+    width: 100%;
+    gap: 7px;
+    overflow-x: auto;
+    padding-top: 9px;
+    border-top: 1px solid rgba(255, 255, 255, 0.12);
+    scrollbar-width: none;
+  }
+
+  .site-nav nav::-webkit-scrollbar {
+    display: none;
+  }
+
+  .site-nav nav a {
+    flex: 0 0 auto;
+    padding: 8px 10px;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.07);
+    font-size: 0.72rem;
+    line-height: 1;
+  }
+
+  .section-frame,
+  .slide-section {
+    min-height: auto;
+    padding: 134px 14px 46px;
+  }
+
+  .slide-section {
+    scroll-margin-top: 122px;
+  }
+
+  .slide-section::before {
+    inset: 16px 8px;
+    border-radius: 22px;
+  }
+
+  .hero {
+    gap: 18px;
+    align-items: start;
+  }
+
+  .hero-content {
+    max-width: none;
+  }
+
+  .kicker {
+    margin-bottom: 14px;
+    padding: 8px 12px 8px 36px;
+    font-size: 0.68rem;
+    line-height: 1.25;
+    letter-spacing: 0.1em;
+  }
+
+  .section-heading .kicker::before {
+    left: 12px;
+    width: 14px;
+    height: 14px;
+    box-shadow: 0 0 0 5px rgba(255, 200, 74, 0.16);
+  }
+
+  h1,
+  h2,
+  .section-heading h2 {
+    font-size: clamp(2.25rem, 11.2vw, 3.35rem);
+    line-height: 0.98;
+  }
+
+  .section-heading {
+    margin-bottom: 22px;
+  }
+
+  .section-heading p,
+  .hero-copy {
+    font-size: 0.98rem;
+    line-height: 1.5;
+  }
+
+  .section-heading::after {
+    width: 150px;
+    height: 3px;
+    margin-top: 18px;
+  }
+
+  .hero-actions {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    margin-top: 22px;
+  }
+
+  .btn {
+    min-height: 48px;
+    padding: 12px 14px;
+    font-size: 0.88rem;
+    white-space: normal;
+  }
+
+  .hero-visual {
+    min-height: 292px;
+    border-radius: 24px;
+  }
+
+  .hero-visual img {
+    width: 110%;
+    max-width: 430px;
+    transform: translateY(8px);
+  }
+
+  .solar-ring {
+    opacity: 0.34;
+  }
+
+  .hero-stats {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 0;
+    margin-top: 16px;
+    padding: 12px;
+    border-radius: 18px;
+  }
+
+  .hero-stats div {
+    min-height: 74px;
+    padding: 8px 6px;
+  }
+
+  .hero-stats div + div {
+    border-top: 0;
+    border-left: 1px solid rgba(6, 27, 24, 0.12);
+  }
+
+  .hero-stats strong {
+    font-size: 1.55rem;
+  }
+
+  .hero-stats span {
+    font-size: 0.68rem;
+    line-height: 1.2;
+  }
+
+  .glass-card,
+  .feature-card,
+  .price-card,
+  .mini-card,
+  .reward-card,
+  .metric-card {
+    border-radius: 18px;
+    box-shadow: 0 18px 42px rgba(6, 27, 24, 0.1);
+  }
+
+  .glass-card {
+    padding: 18px;
+  }
+
+  .brand-showcase,
+  .product-layout,
+  .pricing-showcase,
+  .demo-layout,
+  .activation-game,
+  .impact-layout,
+  .final-message-card {
+    gap: 16px;
+  }
+
+  .identity-panel {
+    padding: 12px;
+  }
+
+  .identity-panel div {
+    padding: 14px;
+  }
+
+  .brand-grid {
+    gap: 12px;
+  }
+
+  .tagline-band {
+    width: 100%;
+    margin-top: 18px;
+    padding: 13px 16px;
+    border-radius: 18px;
+    font-size: 1rem;
+    text-align: center;
+  }
+
+  .media-card,
+  .brand-media,
+  .pricing-media,
+  .activation-proof-strip .media-card,
+  .impact-media {
+    min-height: 205px;
+    border-radius: 20px;
+  }
+
+  .media-card figcaption {
+    left: 12px;
+    right: 12px;
+    bottom: 12px;
+    padding: 12px 14px;
+    border-radius: 14px;
+  }
+
+  .media-card figcaption strong {
+    font-size: 0.98rem;
+  }
+
+  .product-visual {
+    min-height: 310px;
+    padding: 12px;
+  }
+
+  .product-visual img {
+    width: 112%;
+  }
+
+  .hotspot {
+    width: 26px;
+    height: 26px;
+    border-width: 2px;
+    box-shadow: 0 0 0 6px rgba(242, 138, 53, 0.16), 0 10px 18px rgba(6, 27, 24, 0.18);
+  }
+
+  .hotspot-tip {
+    left: 12px;
+    right: 12px;
+    bottom: 12px;
+    font-size: 0.84rem;
+  }
+
+  .feature-stack {
+    gap: 10px;
+  }
+
+  .feature-card {
+    min-height: auto;
+    padding: 16px 16px 16px 22px;
+  }
+
+  .feature-card strong,
+  .glass-card h3,
+  .metric-card strong {
+    font-size: 1.35rem;
+  }
+
+  .pricing-showcase .pricing-grid {
+    gap: 12px;
+  }
+
+  .price-card {
+    min-height: auto;
+    padding: 18px;
+  }
+
+  .price-card strong {
+    font-size: 2rem;
+  }
+
+  .value-ribbon {
+    grid-template-columns: 1fr 1fr;
+    border-radius: 16px;
+  }
+
+  .value-ribbon div {
+    padding: 13px 10px;
+    font-size: 0.82rem;
+  }
+
+  .demo-player {
+    border-radius: 20px;
+  }
+
+  .demo-player-bar {
+    min-height: 42px;
+    padding: 0 12px;
+    font-size: 0.64rem;
+  }
+
+  .demo-player-bar span {
+    width: 8px;
+    height: 8px;
+  }
+
+  .demo-player iframe {
+    height: 292px;
+  }
+
+  .demo-notes {
+    gap: 10px;
+  }
+
+  .demo-notes .glass-card {
+    padding: 16px;
+  }
+
+  .booth-map {
+    display: grid;
+    gap: 10px;
+    min-height: auto;
+    padding: 16px;
+  }
+
+  .booth-map::before,
+  .energy-line {
+    display: none;
+  }
+
+  .map-node,
+  .tent-node,
+  .charge-node,
+  .chill-node,
+  .wall-node {
+    position: relative;
+    inset: auto;
+    min-width: 0;
+    min-height: 58px;
+    padding: 13px;
+    transform: none;
+  }
+
+  .tent-node {
+    min-height: 92px;
+  }
+
+  .booth-elements,
+  .reward-grid {
+    gap: 10px;
+  }
+
+  .mini-card,
+  .reward-card {
+    padding: 16px 16px 16px 42px;
+  }
+
+  .mini-card::before,
+  .reward-card::before {
+    left: 16px;
+    top: 20px;
+    width: 10px;
+    height: 10px;
+    box-shadow: 0 0 0 5px rgba(255, 200, 74, 0.14);
+  }
+
+  .brand-connection {
+    margin-top: 16px;
+    padding: 17px 18px;
+    font-size: 0.95rem;
+  }
+
+  .activation-game {
+    grid-template-columns: 1fr;
+    padding: 16px;
+  }
+
+  .game-left {
+    justify-items: center;
+    text-align: center;
+  }
+
+  .timer-circle {
+    width: 142px;
+    height: 142px;
+  }
+
+  .timer-circle span {
+    font-size: 3rem;
+  }
+
+  .camp-board {
+    min-height: auto;
+    gap: 10px;
+    padding: 14px;
+  }
+
+  .camp-board::before,
+  .camp-board::after {
+    display: none;
+  }
+
+  .camp-module {
+    width: 100%;
+    height: auto;
+    min-height: 58px;
+    margin: 0;
+    border-radius: 16px;
+  }
+
+  .why-panel {
+    margin-top: 16px;
+    padding: 18px;
+  }
+
+  .why-panel h3 {
+    font-size: 1.45rem;
+  }
+
+  .why-panel li {
+    padding: 12px 13px;
+    font-size: 0.9rem;
+  }
+
+  .impact-steps {
+    padding: 18px;
+  }
+
+  .impact-steps ol {
+    padding-left: 18px;
+  }
+
+  .impact-steps li {
+    margin: 10px 0;
+    font-size: 0.92rem;
+  }
+
+  .metric-card {
+    padding: 18px;
+  }
+
+  .final-message {
+    min-height: 220px;
+    padding: 22px;
+    border-radius: 20px;
+  }
+
+  .final-message strong {
+    font-size: clamp(1.8rem, 9vw, 2.7rem);
+  }
+
+  .final-message p {
+    font-size: 0.98rem;
+  }
+}
+
+@media (max-width: 420px) {
+  .site-nav nav a {
+    font-size: 0.68rem;
+    padding-inline: 9px;
+  }
+
+  h1,
+  h2,
+  .section-heading h2 {
+    font-size: clamp(2.05rem, 10.5vw, 3rem);
+  }
+
+  .hero-actions {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-visual {
+    min-height: 258px;
+  }
+
+  .demo-player iframe {
+    height: 250px;
+  }
+}
