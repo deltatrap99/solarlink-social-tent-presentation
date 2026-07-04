@@ -7,7 +7,6 @@ Festival booth activation proposal website for the SolarLink Social Tent project
 - Brand identity
 - Product features
 - Embedded cinematic USP demo
-- Pricing strategy
 - Festival booth concept
 - Interactive activation challenge
 - ESG impact message
