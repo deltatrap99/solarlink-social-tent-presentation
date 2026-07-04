@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BUILD YOUR NEXTENT | Modular Tent Experience</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800;900&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="build-nextent.css">
+</head>
+<body>
+    <!-- Ambient Forest Background -->
+    <div class="forest-bg"></div>
+    <div class="forest-overlay"></div>
+    <canvas id="particles"></canvas>
+
+    <!-- HERO -->
+    <section class="hero" id="hero">
+        <div class="hero-badge">✳ SR12 — INTERACTIVE EXPERIENCE</div>
+        <img src="nextent-logo.png" alt="NEXTENT Logo" class="hero-logo">
+        <h1 class="hero-title">
+            <span class="line1">BUILD YOUR</span>
+            <span class="line2">NEXTENT</span>
+        </h1>
+        <p class="hero-sub">Modular design for easy repair and part replacement</p>
+        <div class="hero-stats">
+            <div class="stat"><span class="stat-num" data-target="6">0</span><span class="stat-label">Modules</span></div>
+            <div class="stat-divider"></div>
+            <div class="stat"><span class="stat-num" data-target="30">0</span><span class="stat-label">Seconds</span></div>
+            <div class="stat-divider"></div>
+            <div class="stat"><span class="stat-num" data-target="100">0</span><span class="stat-label">% Repairable</span></div>
+        </div>
+        <button class="btn-start" onclick="scrollToSection('usp')">
+            <span>EXPLORE THE SOLUTION</span>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </button>
+        <div class="scroll-hint">
+            <div class="mouse"><div class="wheel"></div></div>
+            <span>Scroll to explore</span>
+        </div>
+    </section>
+
+    <!-- USP VIDEO SECTION -->
+    <section class="usp-section" id="usp">
+        <h3 class="section-title-serif">Unique Selling Proposition</h3>
+
+        <!-- Cinematic Storytelling Player -->
+        <div class="cinema-player" id="cinemaPlayer">
+            <div class="cinema-screen">
+                <!-- Scenes -->
+                <div class="cinema-scene active" data-scene="0">
+                    <img class="scene-bg" src="https://images.unsplash.com/photo-1504280390367-361c6d9f38f4?auto=format&fit=crop&w=1920&q=80" alt="">
+                    <div class="scene-overlay"></div>
+                    <div class="scene-content">
+                        <p class="scene-caption">When your tent fails,</p>
+                        <h2 class="scene-headline">the adventure shouldn't stop.</h2>
+                    </div>
+                </div>
+                <div class="cinema-scene" data-scene="1">
+                    <img class="scene-bg" src="https://images.unsplash.com/photo-1478827536114-da961b7f86d2?auto=format&fit=crop&w=1920&q=80" alt="">
+                    <div class="scene-overlay scene-overlay-dark"></div>
+                    <div class="scene-content">
+                        <p class="scene-caption">Heat builds up. Fabric gets damaged. Parts wear out.</p>
+                        <h2 class="scene-headline">Most tents are replaced before they are truly used up.</h2>
+                    </div>
+                </div>
+                <div class="cinema-scene" data-scene="2">
+                    <img class="scene-bg" src="https://images.unsplash.com/photo-1510312305653-8ed496efae75?auto=format&fit=crop&w=1920&q=80" alt="">
+                    <div class="scene-overlay"></div>
+                    <div class="scene-content">
+                        <h2 class="scene-headline scene-reveal">NEXTENT<br><span class="scene-sub">changes the story.</span></h2>
+                    </div>
+                </div>
+                <div class="cinema-scene" data-scene="3">
+                    <img class="scene-bg" src="https://images.unsplash.com/photo-1537905569824-f89f14cceb68?auto=format&fit=crop&w=1920&q=80" alt="">
+                    <div class="scene-overlay"></div>
+                    <div class="scene-content scene-feature">
+                        <span class="feature-word">COOL</span>
+                        <p class="feature-desc">A reflective cooling layer helps reduce heat — deflecting up to 90% of solar radiation.</p>
+                    </div>
+                </div>
+                <div class="cinema-scene" data-scene="4">
+                    <img class="scene-bg" src="https://images.unsplash.com/photo-1517823382935-51bfcb0ec6bc?auto=format&fit=crop&w=1920&q=80" alt="">
+                    <div class="scene-overlay"></div>
+                    <div class="scene-content scene-feature">
+                        <span class="feature-word">HEAL</span>
+                        <p class="feature-desc">A self-healing coating turns minor damage into a repair moment — enhanced durability without full replacement.</p>
+                    </div>
+                </div>
+                <div class="cinema-scene" data-scene="5">
+                    <img class="scene-bg" src="https://images.unsplash.com/photo-1445308394109-4ec2920981b1?auto=format&fit=crop&w=1920&q=80" alt="">
+                    <div class="scene-overlay"></div>
+                    <div class="scene-content scene-feature">
+                        <span class="feature-word">BUILD</span>
+                        <p class="feature-desc">Modular parts make replacement simple. Repair the side wall. Swap the groundsheet. Upgrade the cooling layer.</p>
+                    </div>
+                </div>
+                <div class="cinema-scene" data-scene="6">
+                    <img class="scene-bg" src="https://images.unsplash.com/photo-1525811902-f2342640856e?auto=format&fit=crop&w=1920&q=80" alt="">
+                    <div class="scene-overlay"></div>
+                    <div class="scene-content">
+                        <p class="scene-caption">Keep the tent. Keep the adventure.</p>
+                        <h2 class="scene-headline accent-text">Repair, Don't Replace.</h2>
+                    </div>
+                </div>
+                <div class="cinema-scene" data-scene="7">
+                    <div class="scene-bg scene-bg-solid"></div>
+                    <div class="scene-content scene-finale">
+                        <img src="nextent-logo.png" alt="NEXTENT" class="finale-logo-img">
+                        <h2 class="finale-logo">NEXTENT</h2>
+                        <div class="finale-divider"></div>
+                        <p class="finale-tagline">It heals. It lasts. It adapts.</p>
+                    </div>
+                </div>
+            </div>
+            <!-- Controls -->
+            <div class="cinema-controls">
+                <button class="cinema-btn" id="cinemaPlayBtn" onclick="toggleCinema()">
+                    <span id="cinemaPlayIcon">▶</span>
+                </button>
+                <div class="cinema-progress">
+                    <div class="cinema-progress-bar" id="cinemaProgressBar"></div>
+                </div>
+                <div class="cinema-dots" id="cinemaDots">
+                    <span class="cinema-dot active" onclick="goToScene(0)"></span>
+                    <span class="cinema-dot" onclick="goToScene(1)"></span>
+                    <span class="cinema-dot" onclick="goToScene(2)"></span>
+                    <span class="cinema-dot" onclick="goToScene(3)"></span>
+                    <span class="cinema-dot" onclick="goToScene(4)"></span>
+                    <span class="cinema-dot" onclick="goToScene(5)"></span>
+                    <span class="cinema-dot" onclick="goToScene(6)"></span>
+                    <span class="cinema-dot" onclick="goToScene(7)"></span>
+                </div>
+                <span class="cinema-time" id="cinemaTime">Scene 1/8</span>
+            </div>
+        </div>
+
+        <!-- USP Cards -->
+        <div class="usp-grid">
+            <div class="usp-card">
+                <div class="usp-card-badge">Material Innovation</div>
+                <ul>
+                    <li>100% hemp-based fabric</li>
+                    <li>Low environmental impact</li>
+                    <li>Fully biodegradable fiber</li>
+                </ul>
+            </div>
+            <div class="usp-card">
+                <div class="usp-card-badge">Technology</div>
+                <ul>
+                    <li><strong>Heat Reflection:</strong> Cooler interior under direct sunlight</li>
+                    <li><strong>Self-Healing Coating:</strong> Repairs minor scratches → enhanced durability</li>
+                </ul>
+            </div>
+            <div class="usp-card">
+                <div class="usp-card-badge">Modular Design</div>
+                <ul>
+                    <li>Replace individual parts, not the whole tent</li>
+                    <li>Connect multiple tents → flexible expansion</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Product Specs -->
+        <div class="specs-bar">
+            <div class="spec-item"><span class="spec-val">2-3</span><span class="spec-lbl">People</span></div>
+            <div class="spec-item"><span class="spec-val">100%</span><span class="spec-lbl">Hemp Fabric</span></div>
+            <div class="spec-item"><span class="spec-val">8-10</span><span class="spec-lbl">Year Lifespan</span></div>
+            <div class="spec-item"><span class="spec-val">UV+</span><span class="spec-lbl">Weather Resistant</span></div>
+        </div>
+    </section>
+
+    <!-- MODULES SHOWCASE -->
+    <section class="nx-modules" id="modules">
+        <div class="nx-modules__header">
+            <span class="nx-modules__tag">T H E &nbsp; M O D U L E S</span>
+            <h2 class="nx-modules__title">The NEXTENT Nexus: <span class="nx-modules__accent">6 Parts.</span> Infinite Possibilities.</h2>
+            <p class="nx-modules__subtitle">A modular tent system engineered for explorers, festival goers, eco-resorts, and off-grid adventures.<br>Build it your way. Pack it light. Leave no trace.</p>
+        </div>
+
+        <div class="nx-modules__showcase">
+            <!-- LEFT: Product Visual -->
+            <div class="nx-modules__product">
+                <div class="nx-modules__img-wrap">
+                    <img src="https://images.unsplash.com/photo-1504280390367-361c6d9f38f4?auto=format&fit=crop&w=800&q=80" alt="NEXTENT Tent" class="nx-modules__img">
+                    <div class="nx-modules__img-overlay"></div>
+                    <div class="nx-modules__brand">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 21L12 3l9 18H3z"/></svg>
+                        NEXTENT
+                    </div>
+                </div>
+                <!-- Specs Badges -->
+                <div class="nx-modules__specs">
+                    <div class="nx-modules__spec">
+                        <span class="nx-modules__spec-icon">⚖️</span>
+                        <div>
+                            <strong>1.8kg</strong>
+                            <span>Base Module</span>
+                        </div>
+                    </div>
+                    <div class="nx-modules__spec">
+                        <span class="nx-modules__spec-icon">⏱️</span>
+                        <div>
+                            <strong>&lt;3 min</strong>
+                            <span>Setup</span>
+                        </div>
+                    </div>
+                    <div class="nx-modules__spec">
+                        <span class="nx-modules__spec-icon">⛺</span>
+                        <div>
+                            <strong>Built for</strong>
+                            <span>Festival / Mountain / Eco-stay</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- Description -->
+                <p class="nx-modules__desc">The NEXTENT Nexus adapts to your environment and your journey. Six precision-engineered modules work together — or stand alone — so you can move freely, stay comfortably, and explore responsibly.</p>
+                <button class="nx-modules__cta" onclick="scrollToSection('game')">
+                    ⛺ Explore the Nexus Build
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                </button>
+            </div>
+
+            <!-- RIGHT: Module Cards Grid -->
+            <div class="nx-modules__grid">
+                <div class="nx-modules__card" data-module="roof">
+                    <div class="nx-modules__card-icon">🏠</div>
+                    <h4 class="nx-modules__card-name">Roof Panel</h4>
+                    <p class="nx-modules__card-desc">UV-reflective coating, waterproof hemp fiber</p>
+                </div>
+                <div class="nx-modules__card" data-module="wall">
+                    <div class="nx-modules__card-icon">🧱</div>
+                    <h4 class="nx-modules__card-name">Side Wall</h4>
+                    <p class="nx-modules__card-desc">Ventilated mesh + hemp panel, snap-lock edges</p>
+                </div>
+                <div class="nx-modules__card" data-module="ground">
+                    <div class="nx-modules__card-icon">🟫</div>
+                    <h4 class="nx-modules__card-name">Groundsheet</h4>
+                    <p class="nx-modules__card-desc">Waterproof base, anti-mud coating, self-cleaning</p>
+                </div>
+                <div class="nx-modules__card" data-module="pole">
+                    <div class="nx-modules__card-icon">📐</div>
+                    <h4 class="nx-modules__card-name">Pole</h4>
+                    <p class="nx-modules__card-desc">Magnetic ribbing, lightweight aluminum alloy</p>
+                </div>
+                <div class="nx-modules__card" data-module="pocket">
+                    <div class="nx-modules__card-icon">🎒</div>
+                    <h4 class="nx-modules__card-name">Storage Pocket</h4>
+                    <p class="nx-modules__card-desc">Clip-on organizer, expandable compartments</p>
+                </div>
+                <div class="nx-modules__card" data-module="cooling">
+                    <div class="nx-modules__card-icon">❄️</div>
+                    <h4 class="nx-modules__card-name">Cooling Layer</h4>
+                    <p class="nx-modules__card-desc">Reflective film, deflects 90% solar radiation</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Bottom Feature Badges -->
+        <div class="nx-modules__features">
+            <div class="nx-modules__feature">
+                <span class="nx-modules__feature-icon">🪶</span>
+                <div>
+                    <strong>Lightweight</strong>
+                    <span>Carry less, explore more</span>
+                </div>
+            </div>
+            <div class="nx-modules__feature">
+                <span class="nx-modules__feature-icon">🔧</span>
+                <div>
+                    <strong>Modular Repair</strong>
+                    <span>Fix only what you need</span>
+                </div>
+            </div>
+            <div class="nx-modules__feature">
+                <span class="nx-modules__feature-icon">⚡</span>
+                <div>
+                    <strong>Fast Setup</strong>
+                    <span>Under 3 minutes</span>
+                </div>
+            </div>
+            <div class="nx-modules__feature">
+                <span class="nx-modules__feature-icon">♻️</span>
+                <div>
+                    <strong>Lower Waste</strong>
+                    <span>Built for a lighter footprint</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- GAME SECTION — PREMIUM REDESIGN -->
+    <section class="nx-game" id="game">
+        <div class="nx-game__header">
+            <span class="nx-game__tag">⛺ THE CHALLENGE</span>
+            <h2 class="nx-game__title">Can You Fix It in <span class="nx-game__highlight">30 Seconds</span>?</h2>
+            <p class="nx-game__desc">Draw a festival situation card, then select the right module(s) to repair your tent before time runs out.</p>
+        </div>
+
+        <div class="nx-game__board">
+            <!-- LEFT PANEL: TENT VISUAL -->
+            <div class="nx-game__tent-panel">
+                <div class="nx-game__panel-header">
+                    <span class="nx-game__panel-tag">YOUR TENT</span>
+                    <span class="nx-game__panel-status" id="nxTentStatus">● Ready</span>
+                </div>
+                <div class="nx-game__tent-wrap">
+                    <svg viewBox="0 0 400 350" class="nx-game__tent-svg">
+                        <defs>
+                            <linearGradient id="nxRoof" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#2D4A3E"/><stop offset="100%" stop-color="#1B5E20"/></linearGradient>
+                            <linearGradient id="nxWall" x1="0%" y1="0%" x2="0%" y2="100%"><stop offset="0%" stop-color="#5B8C5A"/><stop offset="100%" stop-color="#4A7A49"/></linearGradient>
+                            <filter id="nxGlow"><feGaussianBlur stdDeviation="5" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+                        </defs>
+                        <!-- Ground -->
+                        <rect x="50" y="280" width="300" height="20" rx="4" class="tent-part" id="svg-ground" fill="#8B7355"/>
+                        <!-- Poles -->
+                        <line x1="100" y1="280" x2="200" y2="80" class="tent-part" id="svg-pole1" stroke="#B0B0B0" stroke-width="5" stroke-linecap="round"/>
+                        <line x1="300" y1="280" x2="200" y2="80" class="tent-part" id="svg-pole2" stroke="#B0B0B0" stroke-width="5" stroke-linecap="round"/>
+                        <!-- Walls -->
+                        <polygon points="55,280 100,280 200,80" class="tent-part" id="svg-wall-l" fill="url(#nxWall)" opacity="0.85"/>
+                        <polygon points="300,280 345,280 200,80" class="tent-part" id="svg-wall-r" fill="url(#nxWall)" opacity="0.85"/>
+                        <!-- Roof -->
+                        <polygon points="200,55 75,205 325,205" class="tent-part" id="svg-roof" fill="url(#nxRoof)" opacity="0.92"/>
+                        <!-- Cooling -->
+                        <polygon points="200,50 70,205 330,205" class="tent-part" id="svg-cooling" fill="none" stroke="#00D4FF" stroke-width="2.5" stroke-dasharray="8,4" opacity="0.5"/>
+                        <!-- Pockets -->
+                        <rect x="115" y="218" width="42" height="32" rx="6" class="tent-part" id="svg-pocket1" fill="#D4A853" opacity="0.85"/>
+                        <rect x="243" y="218" width="42" height="32" rx="6" class="tent-part" id="svg-pocket2" fill="#D4A853" opacity="0.85"/>
+                        <!-- Door -->
+                        <path d="M175 280 Q200 230 225 280" class="tent-part" fill="#3D6B5A" opacity="0.6"/>
+                        <!-- Labels -->
+                        <text x="200" y="150" class="nx-svg-label" id="nxLabelRoof">Roof</text>
+                        <text x="70" y="215" class="nx-svg-label" id="nxLabelWall">Wall</text>
+                        <text x="200" y="305" class="nx-svg-label" id="nxLabelGround">Ground</text>
+                        <text x="150" y="75" class="nx-svg-label" id="nxLabelPole">Pole</text>
+                        <text x="136" y="242" class="nx-svg-label" id="nxLabelPocket">Pocket</text>
+                        <text x="200" y="40" class="nx-svg-label" id="nxLabelCooling">Cooling</text>
+                    </svg>
+                </div>
+                <!-- Module Status Bar -->
+                <div class="nx-game__module-status">
+                    <span class="nx-ms" data-for="roof"><i>🏠</i> Roof <em class="nx-ms__ok">OK</em></span>
+                    <span class="nx-ms" data-for="wall"><i>🧱</i> Wall <em class="nx-ms__ok">OK</em></span>
+                    <span class="nx-ms" data-for="ground"><i>🟫</i> Ground <em class="nx-ms__ok">OK</em></span>
+                    <span class="nx-ms" data-for="pole"><i>📐</i> Pole <em class="nx-ms__ok">OK</em></span>
+                    <span class="nx-ms" data-for="pocket"><i>🎒</i> Pocket <em class="nx-ms__ok">OK</em></span>
+                    <span class="nx-ms" data-for="cooling"><i>❄️</i> Cooling <em class="nx-ms__ok">OK</em></span>
+                </div>
+                <!-- Streak -->
+                <div class="nx-game__streak">
+                    <span class="nx-game__streak-label">🔥 STREAK</span>
+                    <div class="nx-game__streak-dots">
+                        <span class="nx-sd" id="cd1"></span><span class="nx-sd" id="cd2"></span><span class="nx-sd" id="cd3"></span><span class="nx-sd" id="cd4"></span><span class="nx-sd" id="cd5"></span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- RIGHT PANEL: GAME CONTROLS -->
+            <div class="nx-game__ctrl-panel">
+                <!-- Situation Card -->
+                <div class="nx-game__card" id="nxCard">
+                    <div class="nx-game__card-inner" id="cardInner">
+                        <div class="card-front">
+                            <div class="card-emoji">🎴</div>
+                            <p>Draw a card to begin!</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Timer -->
+                <div class="nx-game__timer" id="timerWrap">
+                    <svg class="nx-game__timer-ring" viewBox="0 0 120 120">
+                        <circle cx="60" cy="60" r="54" class="nx-game__timer-bg"/>
+                        <circle cx="60" cy="60" r="54" class="nx-game__timer-fill" id="timerProgress"/>
+                    </svg>
+                    <span class="nx-game__timer-num" id="timerText">30</span>
+                    <span class="nx-game__timer-label">SECONDS</span>
+                </div>
+
+                <!-- Module Selection -->
+                <div class="nx-game__mods">
+                    <div class="nx-game__mods-title">SELECT MODULE(S)</div>
+                    <div class="nx-game__mods-grid" id="moduleButtons">
+                        <button class="nx-mod" data-mod="roof" onclick="selectModule('roof')"><span class="nx-mod__icon">🏠</span><span class="nx-mod__name">Roof</span></button>
+                        <button class="nx-mod" data-mod="wall" onclick="selectModule('wall')"><span class="nx-mod__icon">🧱</span><span class="nx-mod__name">Wall</span></button>
+                        <button class="nx-mod" data-mod="ground" onclick="selectModule('ground')"><span class="nx-mod__icon">🟫</span><span class="nx-mod__name">Ground</span></button>
+                        <button class="nx-mod" data-mod="pole" onclick="selectModule('pole')"><span class="nx-mod__icon">📐</span><span class="nx-mod__name">Pole</span></button>
+                        <button class="nx-mod" data-mod="pocket" onclick="selectModule('pocket')"><span class="nx-mod__icon">🎒</span><span class="nx-mod__name">Pocket</span></button>
+                        <button class="nx-mod" data-mod="cooling" onclick="selectModule('cooling')"><span class="nx-mod__icon">❄️</span><span class="nx-mod__name">Cooling</span></button>
+                    </div>
+                </div>
+
+                <!-- Action -->
+                <div class="nx-game__actions">
+                    <button class="nx-game__btn-draw" id="btnDraw" onclick="drawCard()">🎴 DRAW SITUATION CARD</button>
+                    <button class="nx-game__btn-repair" id="btnSubmit" onclick="submitAnswer()" style="display:none">🔧 REPAIR NOW</button>
+                </div>
+
+                <!-- Score -->
+                <div class="nx-game__score">
+                    <div class="nx-game__score-item">
+                        <span class="nx-game__score-label">SCORE</span>
+                        <span class="nx-game__score-val"><strong id="scoreNum">0</strong><span class="nx-game__score-sep">/</span><span id="totalNum">0</span></span>
+                    </div>
+                    <div class="nx-game__score-divider"></div>
+                    <div class="nx-game__score-item">
+                        <span class="nx-game__score-label">BEST STREAK</span>
+                        <span class="nx-game__score-val" id="bestStreak">0</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- RESULT OVERLAY -->
+    <div class="nx-result" id="resultOverlay">
+        <div class="nx-result__box" id="resultBox">
+            <div class="nx-result__icon" id="resultIcon">✅</div>
+            <h3 class="nx-result__title" id="resultTitle">Correct!</h3>
+            <p class="nx-result__msg" id="resultMsg">You chose the right module.</p>
+            <div class="nx-result__tip" id="resultTip"></div>
+            <button class="nx-result__btn" onclick="closeResult()">Next Card →</button>
+        </div>
+    </div>
+
+    <!-- CLOSING MESSAGE -->
+    <section class="message-section" id="message">
+        <div class="message-card">
+            <div class="quote-mark">"</div>
+            <h2>Don't throw away the whole tent.</h2>
+            <h2 class="accent-text">Upgrade only what you need.</h2>
+            <div class="message-divider"></div>
+            <p>Modularity isn't just about snapping parts together for fun — it makes <strong>repair easier</strong>, <strong>extends product life</strong>, and <strong>reduces waste</strong>.</p>
+            <div class="impact-stats">
+                <div class="impact"><span>80%</span><p>Less Waste</p></div>
+                <div class="impact"><span>5×</span><p>Longer Life</p></div>
+                <div class="impact"><span>100%</span><p>Repairable</p></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PROBLEM AWARENESS -->
+    <section class="problem-section" id="problem">
+        <div class="problem-grid">
+            <div class="problem-card">
+                <h3>PROBLEM STATEMENT</h3>
+                <ul>
+                    <li>92M tons textile waste/year</li>
+                    <li>73% textile waste is landfilled or incinerated</li>
+                    <li>57% petroleum-based fibers</li>
+                    <li>2–8% global CO₂ emissions</li>
+                </ul>
+            </div>
+            <div class="problem-card">
+                <h3>MARKETING GAP</h3>
+                <ul>
+                    <li>Full replacement when damaged</li>
+                    <li>+5–10°C indoor temperature</li>
+                    <li>30–50% fabric strength loss</li>
+                    <li>20–30% shorter tent lifespan</li>
+                </ul>
+            </div>
+        </div>
+        <div class="nextent-solution-tag">NEXTENT solves all of this. ✳</div>
+    </section>
+
+    <!-- REGISTRATION FORM -->
+    <section class="nx-signup" id="signup">
+        <div class="nx-signup__glow"></div>
+        <div class="nx-signup__card">
+            <div class="nx-signup__header">
+                <img src="nextent-logo.png" alt="NEXTENT" class="nx-signup__logo">
+                <span class="nx-signup__badge">🌿 EARLY ACCESS</span>
+                <h2 class="nx-signup__title">Join the <span class="nx-signup__accent">NEXTENT</span> Movement</h2>
+                <p class="nx-signup__desc">Be the first to experience sustainable modular camping. Get exclusive updates, early-bird pricing, and a free repair kit with your first order.</p>
+            </div>
+            <form class="nx-signup__form" id="signupForm" onsubmit="handleSignup(event)">
+                <div class="nx-signup__row">
+                    <div class="nx-signup__field">
+                        <label for="signupName">Full Name</label>
+                        <input type="text" id="signupName" placeholder="Your full name" required>
+                    </div>
+                    <div class="nx-signup__field">
+                        <label for="signupEmail">Email Address</label>
+                        <input type="email" id="signupEmail" placeholder="you@example.com" required>
+                    </div>
+                </div>
+                <div class="nx-signup__row">
+                    <div class="nx-signup__field">
+                        <label>Partner Type</label>
+                        <div class="nx-signup__toggle" id="partnerToggle">
+                            <button type="button" class="nx-signup__toggle-btn active" data-value="individual" onclick="selectPartnerType(this)">
+                                <span>👤</span> Individual
+                            </button>
+                            <button type="button" class="nx-signup__toggle-btn" data-value="b2b" onclick="selectPartnerType(this)">
+                                <span>🏢</span> B2B / Enterprise
+                            </button>
+                        </div>
+                        <input type="hidden" id="signupPartnerType" value="individual">
+                    </div>
+                </div>
+                <div class="nx-signup__field">
+                    <label for="signupInterest">What interests you most?</label>
+                    <select id="signupInterest">
+                        <option value="festival">🎪 Festival Camping</option>
+                        <option value="outdoor">🏕️ Outdoor Adventures</option>
+                        <option value="sustainability">🌱 Sustainability</option>
+                        <option value="modular">🔧 Modular Design</option>
+                        <option value="all">✨ Everything!</option>
+                    </select>
+                </div>
+                <button type="submit" class="nx-signup__btn" id="signupBtn">
+                    <span class="nx-signup__btn-text">🚀 JOIN WAITLIST</span>
+                    <span class="nx-signup__btn-loader" style="display:none">
+                        <span class="nx-signup__spinner"></span> Registering...
+                    </span>
+                </button>
+                <p class="nx-signup__note">🔒 We respect your privacy. Unsubscribe anytime.</p>
+            </form>
+            <!-- Success State -->
+            <div class="nx-signup__success" id="signupSuccess" style="display:none">
+                <div class="nx-signup__success-icon">🎉</div>
+                <h3>Welcome to NEXTENT!</h3>
+                <p>You're on the list! Check your email for confirmation.</p>
+                <div class="nx-signup__success-badge">Early Access Member #<span id="memberNum">0247</span></div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <img src="nextent-logo.png" alt="NEXTENT" class="footer-logo">
+        <p>✳ NEXTENT — Next-Gen Sustainable Outdoor Gear © 2026 | SR12</p>
+    </footer>
+
+    <!-- Sound toggle -->
+    <button class="sound-toggle" id="soundToggle" onclick="toggleSound()" title="Toggle Sound">
+        <span id="soundIcon">🔊</span>
+    </button>
+
+    <script src="build-nextent.js"></script>
+</body>
+</html>
