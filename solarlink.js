@@ -114,6 +114,33 @@ function setupActivationGame() {
   });
 }
 
+function setupScrollPolish() {
+  const navLinks = [...document.querySelectorAll(".site-nav nav a")];
+  const sections = navLinks
+    .map((link) => document.querySelector(link.getAttribute("href")))
+    .filter(Boolean);
+
+  function updateActiveSection() {
+    const scrollProgress = Math.round((window.scrollY / Math.max(1, document.body.scrollHeight - window.innerHeight)) * 100);
+    document.documentElement.style.setProperty("--scroll-glow", scrollProgress);
+
+    const activeSection = sections
+      .map((section) => ({
+        id: section.id,
+        distance: Math.abs(section.getBoundingClientRect().top - 140)
+      }))
+      .sort((a, b) => a.distance - b.distance)[0];
+
+    navLinks.forEach((link) => {
+      link.classList.toggle("is-active", link.getAttribute("href") === `#${activeSection?.id}`);
+    });
+  }
+
+  window.addEventListener("scroll", updateActiveSection, { passive: true });
+  window.addEventListener("resize", updateActiveSection);
+  updateActiveSection();
+}
+
 function alignHashSection() {
   if (!window.location.hash) return;
   const target = document.querySelector(window.location.hash);
@@ -136,6 +163,7 @@ document.addEventListener("DOMContentLoaded", () => {
   setupParticles();
   setupHotspots();
   setupActivationGame();
+  setupScrollPolish();
   scheduleHashAlignment();
 });
 

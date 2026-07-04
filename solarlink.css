@@ -1877,3 +1877,510 @@ body::before {
     height: 250px;
   }
 }
+
+/* ========================= VISUAL UPGRADE PASS ========================= */
+
+body {
+  background:
+    radial-gradient(circle at 15% 5%, rgba(255, 200, 74, 0.3), transparent 24rem),
+    radial-gradient(circle at 88% 12%, rgba(24, 184, 148, 0.24), transparent 26rem),
+    radial-gradient(circle at 54% 56%, rgba(242, 138, 53, 0.1), transparent 28rem),
+    linear-gradient(180deg, #fff8e8 0%, #edf8ee 40%, #0d382f 100%);
+}
+
+main {
+  position: relative;
+  isolation: isolate;
+}
+
+main::before {
+  position: fixed;
+  inset: 0;
+  z-index: -3;
+  content: "";
+  background:
+    radial-gradient(circle at calc(20% + var(--scroll-glow, 0%) * 0.18) 16%, rgba(255, 200, 74, 0.18), transparent 18rem),
+    radial-gradient(circle at 78% calc(18% + var(--scroll-glow, 0%) * 0.08), rgba(24, 184, 148, 0.16), transparent 20rem);
+  pointer-events: none;
+}
+
+.site-nav {
+  border-color: rgba(255, 255, 255, 0.2);
+  background:
+    linear-gradient(135deg, rgba(3, 18, 16, 0.94), rgba(7, 47, 39, 0.9)),
+    radial-gradient(circle at 12% 0%, rgba(255, 200, 74, 0.18), transparent 12rem);
+}
+
+.site-nav::after {
+  position: absolute;
+  inset: auto 18px -1px;
+  height: 2px;
+  content: "";
+  border-radius: 999px;
+  background: linear-gradient(90deg, transparent, var(--solar), var(--teal), transparent);
+  opacity: 0.75;
+}
+
+.site-nav nav a {
+  position: relative;
+  padding: 8px 2px;
+}
+
+.site-nav nav a::after {
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  width: 0;
+  height: 2px;
+  content: "";
+  border-radius: 999px;
+  background: var(--solar);
+  transform: translateX(-50%);
+  transition: width 0.22s ease;
+}
+
+.site-nav nav a:hover::after,
+.site-nav nav a.is-active::after {
+  width: 100%;
+}
+
+.brand-mark {
+  animation: solarPulse 3.6s ease-in-out infinite;
+}
+
+@keyframes solarPulse {
+  50% {
+    box-shadow: 0 0 40px rgba(255, 200, 74, 0.68), 0 0 0 9px rgba(255, 200, 74, 0.06);
+  }
+}
+
+.hero {
+  min-height: 100svh;
+}
+
+.hero-bg {
+  background:
+    linear-gradient(90deg, rgba(255, 249, 234, 0.98) 0%, rgba(255, 249, 234, 0.76) 34%, rgba(255, 249, 234, 0.2) 58%, rgba(6, 27, 24, 0.28) 100%),
+    radial-gradient(circle at 75% 23%, rgba(255, 200, 74, 0.7), transparent 17rem),
+    radial-gradient(circle at 84% 65%, rgba(24, 184, 148, 0.22), transparent 20rem),
+    url("assets/nextent-roadshow/image23.jpeg") center/cover;
+}
+
+.hero::before {
+  position: absolute;
+  right: -6vw;
+  bottom: -12vw;
+  z-index: -1;
+  width: min(760px, 58vw);
+  aspect-ratio: 1;
+  content: "";
+  border-radius: 50%;
+  background:
+    repeating-conic-gradient(from 12deg, rgba(255, 200, 74, 0.17) 0 4deg, transparent 4deg 13deg),
+    radial-gradient(circle, rgba(255, 200, 74, 0.18), transparent 66%);
+  filter: blur(0.2px);
+  animation: spin 42s linear infinite;
+}
+
+.hero::after,
+.slide-section::after {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -1px;
+  z-index: -1;
+  height: 92px;
+  content: "";
+  background:
+    radial-gradient(70% 130% at 12% 100%, rgba(11, 48, 40, 0.35), transparent 58%),
+    radial-gradient(70% 120% at 44% 100%, rgba(24, 184, 148, 0.18), transparent 55%),
+    radial-gradient(70% 120% at 88% 100%, rgba(6, 27, 24, 0.28), transparent 58%);
+  opacity: 0.55;
+  pointer-events: none;
+}
+
+.hero-content {
+  position: relative;
+}
+
+.hero-content::before {
+  position: absolute;
+  left: -24px;
+  top: -18px;
+  width: 82px;
+  height: 82px;
+  content: "";
+  border-radius: 24px;
+  background:
+    linear-gradient(135deg, rgba(255, 200, 74, 0.24), rgba(24, 184, 148, 0.16));
+  filter: blur(1px);
+  transform: rotate(12deg);
+}
+
+.hero-content > * {
+  position: relative;
+  z-index: 1;
+}
+
+h1 span {
+  background: linear-gradient(92deg, #0a6656 0%, var(--teal) 48%, var(--solar) 94%);
+  -webkit-background-clip: text;
+  background-clip: text;
+}
+
+.hero-copy {
+  padding-left: 18px;
+  border-left: 4px solid rgba(255, 200, 74, 0.78);
+}
+
+.primary {
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(135deg, #13c7a0, #0a6a59 72%);
+}
+
+.primary::after {
+  position: absolute;
+  inset: 0;
+  content: "";
+  background: linear-gradient(110deg, transparent 20%, rgba(255, 255, 255, 0.28) 42%, transparent 62%);
+  transform: translateX(-120%);
+  transition: transform 0.55s ease;
+}
+
+.primary:hover::after {
+  transform: translateX(120%);
+}
+
+.hero-visual {
+  border-radius: 34px;
+  background:
+    radial-gradient(circle at 50% 48%, rgba(255, 200, 74, 0.18), transparent 18rem),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.18), rgba(255, 250, 238, 0.08));
+}
+
+.hero-visual::before {
+  position: absolute;
+  inset: auto 12% 7%;
+  height: 20%;
+  content: "";
+  border-radius: 50%;
+  background: radial-gradient(ellipse, rgba(6, 27, 24, 0.28), transparent 70%);
+  filter: blur(18px);
+}
+
+.hero-visual img {
+  animation: floatTent 5.8s ease-in-out infinite;
+}
+
+@keyframes floatTent {
+  50% { transform: translateY(-12px) scale(1.01); }
+}
+
+.floating-card {
+  border-color: rgba(255, 255, 255, 0.82);
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.88), rgba(246, 255, 248, 0.72));
+}
+
+.floating-card::before {
+  width: 10px;
+  height: 10px;
+  content: "";
+  border-radius: 999px;
+  background: var(--solar);
+  box-shadow: 0 0 0 6px rgba(255, 200, 74, 0.16);
+}
+
+.hero-stats {
+  overflow: hidden;
+}
+
+.hero-stats::before {
+  position: absolute;
+  inset: 0;
+  content: "";
+  background: linear-gradient(110deg, transparent, rgba(255, 200, 74, 0.16), transparent);
+  transform: translateX(-100%);
+  animation: shimmer 5s ease-in-out infinite;
+}
+
+@keyframes shimmer {
+  45%, 100% { transform: translateX(120%); }
+}
+
+.section-heading {
+  position: relative;
+}
+
+.section-heading::before {
+  position: absolute;
+  right: clamp(0px, 8vw, 140px);
+  top: -18px;
+  width: 78px;
+  height: 78px;
+  content: "";
+  border: 1px solid rgba(24, 184, 148, 0.2);
+  border-radius: 28px;
+  background:
+    linear-gradient(135deg, rgba(255, 200, 74, 0.16), rgba(24, 184, 148, 0.1));
+  transform: rotate(14deg);
+}
+
+.slide-section {
+  background:
+    radial-gradient(circle at 8% 18%, rgba(255, 200, 74, 0.08), transparent 18rem),
+    radial-gradient(circle at 92% 8%, rgba(24, 184, 148, 0.08), transparent 20rem);
+}
+
+.slide-section::before {
+  background:
+    linear-gradient(135deg, rgba(255, 250, 238, 0.74), rgba(221, 239, 228, 0.36)),
+    radial-gradient(circle at 8% 12%, rgba(255, 200, 74, 0.18), transparent 18rem),
+    radial-gradient(circle at 90% 18%, rgba(24, 184, 148, 0.14), transparent 23rem);
+}
+
+.glass-card,
+.feature-card,
+.mini-card,
+.reward-card,
+.metric-card {
+  position: relative;
+  overflow: hidden;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.88), rgba(246, 253, 248, 0.72));
+}
+
+.glass-card::before,
+.feature-card::after,
+.mini-card::after,
+.reward-card::after,
+.metric-card::after {
+  position: absolute;
+  inset: 0;
+  content: "";
+  background:
+    linear-gradient(130deg, rgba(255, 255, 255, 0.55), transparent 34%),
+    radial-gradient(circle at 92% 12%, rgba(255, 200, 74, 0.14), transparent 8rem);
+  pointer-events: none;
+}
+
+.glass-card > *,
+.feature-card > *,
+.mini-card > *,
+.reward-card > *,
+.metric-card > * {
+  position: relative;
+  z-index: 1;
+}
+
+.brand-grid article {
+  min-height: 210px;
+}
+
+.brand-grid article::after {
+  position: absolute;
+  right: 20px;
+  bottom: 18px;
+  width: 54px;
+  height: 54px;
+  content: "";
+  border-radius: 18px;
+  background:
+    linear-gradient(135deg, rgba(255, 200, 74, 0.25), rgba(24, 184, 148, 0.18));
+  transform: rotate(-10deg);
+}
+
+.card-num {
+  display: inline-grid;
+  place-items: center;
+  width: 38px;
+  height: 38px;
+  border-radius: 12px;
+  background: rgba(24, 184, 148, 0.11);
+}
+
+.identity-panel {
+  background:
+    linear-gradient(135deg, rgba(6, 27, 24, 0.94), rgba(13, 112, 95, 0.86));
+}
+
+.identity-panel span {
+  color: rgba(255, 200, 74, 0.9);
+}
+
+.identity-panel strong {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.media-card img {
+  transition: transform 0.8s ease, filter 0.8s ease;
+}
+
+.media-card:hover img {
+  filter: saturate(1.12) contrast(1.04);
+  transform: scale(1.08);
+}
+
+.product-visual {
+  background:
+    radial-gradient(circle at 50% 35%, rgba(255, 200, 74, 0.18), transparent 18rem),
+    radial-gradient(circle at 25% 72%, rgba(24, 184, 148, 0.18), transparent 16rem),
+    linear-gradient(135deg, rgba(255, 255, 255, 0.76), rgba(224, 243, 232, 0.7));
+}
+
+.product-visual::before {
+  position: absolute;
+  inset: 28px;
+  content: "";
+  border: 1px dashed rgba(13, 112, 95, 0.18);
+  border-radius: 28px;
+}
+
+.hotspot {
+  animation: hotspotPulse 2s ease-in-out infinite;
+}
+
+.hotspot:nth-of-type(2) { animation-delay: 0.3s; }
+.hotspot:nth-of-type(3) { animation-delay: 0.6s; }
+.hotspot:nth-of-type(4) { animation-delay: 0.9s; }
+
+@keyframes hotspotPulse {
+  50% { box-shadow: 0 0 0 12px rgba(242, 138, 53, 0.08), 0 14px 28px rgba(6, 27, 24, 0.2); }
+}
+
+.feature-card {
+  border-left: 0;
+}
+
+.feature-card::before {
+  background: linear-gradient(180deg, var(--solar), var(--teal), #6fd58f);
+}
+
+.demo-section {
+  background:
+    linear-gradient(180deg, rgba(255, 249, 234, 0.98), rgba(236, 248, 239, 0.92)),
+    radial-gradient(circle at 16% 24%, rgba(255, 200, 74, 0.18), transparent 19rem),
+    radial-gradient(circle at 88% 20%, rgba(24, 184, 148, 0.2), transparent 22rem);
+}
+
+.demo-player {
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  box-shadow: 0 36px 86px rgba(6, 27, 24, 0.24), 0 0 0 12px rgba(24, 184, 148, 0.05);
+}
+
+.demo-player::after {
+  position: absolute;
+  inset: 54px 0 auto;
+  height: 80px;
+  content: "";
+  background: linear-gradient(180deg, rgba(255, 200, 74, 0.08), transparent);
+  pointer-events: none;
+}
+
+.demo-notes .glass-card:nth-child(1) { border-top: 5px solid var(--solar); }
+.demo-notes .glass-card:nth-child(2) { border-top: 5px solid #6fd58f; }
+.demo-notes .glass-card:nth-child(3) { border-top: 5px solid var(--teal); }
+
+.booth-section {
+  background:
+    radial-gradient(circle at 20% 20%, rgba(255, 200, 74, 0.18), transparent 18rem),
+    radial-gradient(circle at 82% 8%, rgba(242, 138, 53, 0.12), transparent 18rem);
+}
+
+.booth-section::after {
+  height: 120px;
+  background:
+    radial-gradient(circle at 10% 40%, rgba(255, 200, 74, 0.9) 0 4px, transparent 5px),
+    radial-gradient(circle at 24% 70%, rgba(24, 184, 148, 0.9) 0 4px, transparent 5px),
+    radial-gradient(circle at 40% 38%, rgba(255, 200, 74, 0.9) 0 4px, transparent 5px),
+    radial-gradient(circle at 58% 66%, rgba(242, 138, 53, 0.75) 0 4px, transparent 5px),
+    radial-gradient(circle at 76% 42%, rgba(255, 200, 74, 0.9) 0 4px, transparent 5px),
+    radial-gradient(circle at 92% 70%, rgba(24, 184, 148, 0.85) 0 4px, transparent 5px);
+  opacity: 0.45;
+}
+
+.booth-map {
+  border-radius: 30px;
+  background:
+    linear-gradient(135deg, rgba(255, 250, 238, 0.72), rgba(218, 238, 226, 0.78)),
+    url("assets/nextent-roadshow/image23.jpeg") center/cover;
+}
+
+.map-node {
+  border-color: rgba(255, 255, 255, 0.7);
+}
+
+.tent-node {
+  box-shadow: 0 24px 62px rgba(6, 27, 24, 0.28), 0 0 0 10px rgba(255, 200, 74, 0.08);
+}
+
+.activation-game {
+  background:
+    linear-gradient(135deg, rgba(6, 27, 24, 0.94), rgba(13, 112, 95, 0.88));
+}
+
+.activation-game .btn {
+  box-shadow: 0 18px 38px rgba(24, 184, 148, 0.22);
+}
+
+.game-left,
+.game-left p,
+.timer-circle small {
+  color: rgba(255, 255, 255, 0.78);
+}
+
+.timer-circle {
+  background:
+    conic-gradient(var(--solar) var(--progress, 100%), rgba(255, 255, 255, 0.12) 0),
+    radial-gradient(circle, rgba(255, 255, 255, 0.92) 0 58%, transparent 59%);
+}
+
+.camp-board {
+  background:
+    linear-gradient(rgba(255, 255, 255, 0.08) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.08) 1px, transparent 1px),
+    radial-gradient(circle at center, rgba(255, 200, 74, 0.16), transparent 18rem),
+    rgba(255, 255, 255, 0.08);
+  background-size: 28px 28px, 28px 28px, auto, auto;
+}
+
+.camp-module {
+  border-color: rgba(255, 255, 255, 0.56);
+  background: rgba(255, 255, 255, 0.88);
+}
+
+.reward-grid .reward-card {
+  min-height: 118px;
+}
+
+.impact-section {
+  background:
+    linear-gradient(180deg, rgba(255, 249, 234, 0.96) 0%, rgba(231, 243, 234, 0.9) 52%, rgba(8, 45, 38, 0.96) 100%),
+    url("assets/nextent-roadshow/image1.jpeg") center/cover fixed;
+}
+
+.impact-metrics .metric-card {
+  border-left: 5px solid var(--teal);
+}
+
+.impact-metrics .metric-card:nth-child(1) { border-left-color: var(--solar); }
+.impact-metrics .metric-card:nth-child(4) { border-left-color: #6fd58f; }
+
+.final-message {
+  background:
+    radial-gradient(circle at 86% 18%, rgba(255, 200, 74, 0.28), transparent 16rem),
+    radial-gradient(circle at 12% 84%, rgba(24, 184, 148, 0.22), transparent 14rem),
+    linear-gradient(135deg, rgba(3, 18, 16, 0.98), rgba(13, 112, 95, 0.92));
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.001ms !important;
+  }
+}
